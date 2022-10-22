@@ -5,32 +5,25 @@ body, html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
     background-color: #f0f3f2;
+    padding: 25px 20px;
     width: 100%;
 }
 
 .navbar img {
-    width: 100px;
+    width: 140px;
 }
 
-.navbar ul{
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    list-style: none;
-    padding-left: 0;
-}
-
-.navbar ul a {
-    text-decoration: none;
-    color: #113122;
-    font-size: 0.85rem;
+.navbar ul {
+    display: none;
 }
 
 .navbar button {
@@ -41,6 +34,108 @@ body, html {
     background-color: #e0e5e3;
     font-size: 0.85rem;
 }
+
+.hamburger-menu{
+    position: absolute;
+    cursor: pointer;
+}
+
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(270deg);
+
+
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 25px;
+    margin-left: 10px;
+  
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    border-radius: 16px;
+    background-color:#113122;
+    transition-duration: .25s;
+  
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -10px;
+
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 10px;
+    
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 238px;
+    height: fit-content;
+    margin-top: 100px;
+    padding: 30px 0px;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 4px 4px 10px #113122;
+    transition-duration: .40s;
+    border-radius: 0px 16px 16px 0px;
+    z-index: 20;
+
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #113122;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .35s;
+    letter-spacing: 3px;
+    transition: all 0.4s;
+  }
+  .menu__item:hover {
+    background-color:#f0f3f2;
+    color: #113122;
+    text-decoration: none;
+    box-shadow: 3px 3px 4px #113122;
+  }
+
+  .menu__item:active {
+      transform: translateY(4px);
+  }
+
 
 .hero {
     display: flex;
@@ -193,6 +288,7 @@ body, html {
     background-color: #113122;
     border-radius: 100%;
     padding: 4px;
+    border: 2px solid #113122;
 }
 
 .choosing__cards--card h5{
@@ -211,7 +307,7 @@ body, html {
 }
 
 .description__img img{
-width: 400px;
+width: 360px;
 margin-bottom: -20px;
 }
 
@@ -291,12 +387,55 @@ margin-bottom: -20px;
     padding-left: 0;
 }
 
-
-@media only screen and (min-width: 1280px) {
-    .hero {
-        padding-top: 26px;
+@media only screen and (min-width: 767px) {
+    .hamburger-menu {
+        display: none;
     }
 
+    .navbar {
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 1;
+    }
+
+    .navbar ul{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .navbar ul a {
+        text-decoration: none;
+        color: #113122;
+        font-size: 1.35rem;
+    }
+
+    
+    .hero {
+        padding-top: 140px;
+    }
+
+    .ourjourney__text p{
+        width: 300px;
+    }
+
+    .description {
+        flex-wrap: nowrap;
+    }
+
+    .description__text {
+        padding: 20px 40px;
+    }
+
+    .description__img img{
+        width: 460px;
+        }
+}
+
+
+@media only screen and (min-width: 1280px) {
     .navbar img {
         width: 150px;
     }
@@ -304,24 +443,47 @@ margin-bottom: -20px;
     .navbar ul{
         gap: 66px;
     }
-
-    .navbar li:hover{
-        background-color: #113122;
-        border-radius: 8px;
-    }
     
     .navbar ul a {
         font-size: 1.30rem;
+        padding: 16px 26px;
+        transition:all 0.35s;
     }
 
     .navbar ul a:hover{
         font-size: 1.30rem;
         color: white;
+        padding: 16px 26px;
+        background-color: #113122;
+        border-radius: 16px;
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.507);
+    }
+
+    .navbar ul a:active{
+        transform: translateY(6px);
+        box-shadow: 2.5px 2.5px 4px rgba(0, 0, 0, 0.507);
+    }
+
+    .navbar button:hover,
+    .ourjourney__text button:hover {
+        background-color: #113122;
+        color: white;
+        cursor: pointer;
+    }
+
+    .hero {
+        justify-content: center;
+        gap: 40px;
     }
 
     .hero__text{
         font-size: 2rem;
         width: 350px;
+    }
+
+    .hero__text button:hover{
+        background-color: #e0e5e3;
+        color: #113122;
     }
 
     .hero__img {
@@ -333,6 +495,13 @@ margin-bottom: -20px;
         width: 450px;
         top: -188px;
         left: -60px;
+    }
+
+    .collection h3,
+    .ourjourney__text h2,
+    .choosing h2,
+    .step h2 {
+        font-size: 2.2rem;
     }
 
     .collection__cards {
@@ -347,6 +516,15 @@ margin-bottom: -20px;
         object-fit: cover;
     }
 
+    .collection__cards--card img:hover {
+        transform: scale(1.3);
+    }
+
+    .ourjourney {
+        justify-content: center;
+        gap: 150px;
+    }
+
     .ourjourney__img {
         margin-top: 70px;
     } 
@@ -358,20 +536,39 @@ margin-bottom: -20px;
         left: -125px;
     } 
 
+    .choosing__cards--card:hover {
+        background-color: #113122;
+        color: white;
+    }
+
+    .choosing__cards--card:hover img{
+        border: 2px solid white;
+    }
+
     .description {
-        margin: 130px 106px;
+        margin: 160px 206px;
+        height: 400px;
         padding: 36px;
         flex-wrap: nowrap;
     }
 
-    .description__text {
-        font-size: 2rem;
+    .description__text h2{
+        font-size: 1.6rem;
+    }
+
+    .description__text p{
+        font-size: 1.1rem;
+        line-height: 40px;
     }
 
     .description__img img{
-        width: 650px;
-        margin-top: -150px;
+        width: 540px;
+        margin-top: -160px;
         }
+
+    .step {
+        margin-top: -130px;
+    }
 
     .footer__cards {
         flex-wrap: nowrap;
@@ -381,6 +578,10 @@ margin-bottom: -20px;
     .footer__cards--card {
         align-items: flex-start;
         text-align: left;
+    }
+
+    .footer__cards--card h5 {
+        font-size: 1.4rem;
     }
 
 

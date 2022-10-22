@@ -9,22 +9,40 @@
 </head>
 <body>
 
+
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+        
+            <ul class="menu__box">
+              <li><a class="menu__item" href="/">Home </a></li>
+              <li><a class="menu__item" href=“/#about”>About</a></li>
+              <li><a class="menu__item" href=“/#service>Service</a></li>
+              <li><a class="menu__item" href=“#blog>Blog</a></li>
+          </ul> 
+          </div>
+    
+
     <nav class="navbar">
+        
         <img src="./assets/logoipsum-235.svg" alt="logo">
         <ul>
             <li>
-                <a href="">Home</a>
+                <a href="/">Home</a>
             </li>
             <li>
-                <a href="">About</a>
+                <a href="#about">About</a>
             </li>
             <li>
-                <a href="">Service</a>
+                <a href="#service">Service</a>
             </li>
             <li>
-                <a href="">Blog</a>
+                <a href="#blog">Blog</a>
             </li>
         </ul>
+        
         <button>Sing up ↓</button>
     </nav>
 
@@ -38,25 +56,25 @@
         </div>
     </section>
 
-    <section class="collection">
+    <section id="service" class="collection">
         <h3>Plant Collection</h3>
         <div class="collection__cards">
             <div class="collection__cards--card">
                 <img src="./assets/begonia1.png" alt="plant">
-                <h4>Monstera Deliciosa</h4>
+                <h4>Begonia Maculata</h4>
             </div>
             <div class="collection__cards--card">
                 <img src="./assets/Philodendron1.png" alt="plant">
-                <h4>Monstera Deliciosa</h4>
+                <h4>Philodendron Brazil</h4>
             </div>
             <div class="collection__cards--card">
                 <img src="./assets/ficus1.png" alt="plant">
-                <h4>Monstera Deliciosa</h4>
+                <h4>Ficus Lyrata</h4>
             </div>
         </div>
     </section>
 
-    <section class="ourjourney">
+    <section id="about" class="ourjourney">
         <div class="ourjourney__img">
             <img src="./assets/calathea.png" alt="plant">
         </div>
@@ -91,7 +109,7 @@
         </div>
     </section>
 
-    <section class="description">
+    <section id="blog" class="description">
         <div class="description__text">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                 In sint aspernatur quia commodi neque adipisci voluptatum, 
@@ -101,7 +119,7 @@
 
         </div>
         <div class="description__img">
-            <img src="./assets/strelitzia.png" alt="plant">
+            <img src="./assets/kisspng-houseplant-flowerpot-monstera-gift-monstera-5ac78d6cb37a24.3620348715230273087352.png" alt="plant">
         </div>
     </section>
 
